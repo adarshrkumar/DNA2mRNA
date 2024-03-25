@@ -1,21 +1,40 @@
-var input = document.querySelector('.input')
+var dna = document.querySelector('.dna')
+var mrna = document.querySelector('.mrna')
+var trna = document.querySelector('.trna')
+
+var mrnaRep = {
+    A: 'U', 
+    T: 'A', 
+    G: 'C', 
+    C: 'G', 
+}
+
+var trnaRep = {
+    A: 'U', 
+    U: 'A', 
+    G: 'C', 
+    C: 'G', 
+}
 
 function go() {
     var value = input.value.split('')
-    var newValue = []
+    var mrnaVal = []
+    var trnaVal = []
     
-    var replacements = {
-        A: 'U', 
-        T: 'A', 
-        G: 'C', 
-        C: 'G', 
-    }
     
     value.forEach(function(v) {
-        if (v === '/') newValue.push('/')
-        else newValue.push(replacements[v])
+        if (v === '/') mrnaVal.push('/')
+        else mrnaVal.push(mrnaRep[v])
     })
 
-    newValue = newValue.join('')
-    input.value = newValue
+    mrnaVal.forEach(function(v) {
+        if (v === '/') trnaVal.push('/')
+        else trnaVal.push(trnaRep[v])
+    })
+
+    mrnaVal = mrnaVal.join('')
+    mrna.value = mrnaVal
+
+    trnaVal = trnaVal.join('')
+    trna.value = trnaVal
 }
