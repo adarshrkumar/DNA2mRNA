@@ -12,6 +12,10 @@ function go() {
     }
     
     value.forEach(function(v) {
-        newValue.push(replacements[v])
+        if (v === '/') newValue.push('/')
+        else newValue.push(replacements[v])
     })
+
+    newValue = newValue.join('')
+    input.value = newValue
 }
