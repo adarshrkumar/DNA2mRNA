@@ -17,7 +17,7 @@ var trnaRep = {
 }
 
 function go() {
-    var value = input.value.split('')
+    var value = dna.value.split('')
     var mrnaVal = []
     var trnaVal = []
     
